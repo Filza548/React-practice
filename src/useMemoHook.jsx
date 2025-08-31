@@ -1,6 +1,6 @@
 import React, {useMemo, useState} from 'react'
 
-function UseMemoHook() {
+ export function UseMemoHook() {
 
   const [count, setCount ] = useState (0)
   const [data, setData ] = useState (2)
@@ -28,4 +28,37 @@ console.log("multy function for count state")
   )
 }
 
-export default UseMemoHook
+
+export function UseMemoHookpractice () {
+
+const [practice , SetPractice] = useState (0)
+const [bus , SetBus] = useState (3)
+
+
+const okay = useMemo (() =>{
+console.log("han yeah bhi return ho raha hai ")
+  return bus * 3
+  
+}, [bus])
+
+
+  return(
+
+<>
+
+<h1>Again & Again Practice UseMemo </h1>
+
+<h2> {practice} </h2>
+<button onClick={() => SetPractice (practice + 1)}> update Practice</button>
+
+<h2> {bus} </h2>
+<h2> {okay} </h2>
+<button onClick={() => SetBus (bus * 3)}> update table</button>
+
+
+</>
+
+
+  )
+
+}
